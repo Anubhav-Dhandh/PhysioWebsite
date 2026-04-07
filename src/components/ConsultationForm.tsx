@@ -6,7 +6,7 @@ export default function ConsultationForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [formData, setFormData] = useState({
-    full_name: "",
+    name: "",
     phone: "",
     email: "",
     description: "",
@@ -17,7 +17,7 @@ export default function ConsultationForm() {
   const validateField = (name: string, value: string) => {
     let error = "";
     switch (name) {
-      case "full_name":
+      case "name":
         if (!value.trim()) {
           error = "Full name is required";
         } else if (value.trim().length < 3) {
@@ -103,7 +103,7 @@ export default function ConsultationForm() {
 
     setErrors(newErrors);
     setTouched({
-      full_name: true,
+      name: true,
       phone: true,
       email: true,
       description: true,
@@ -215,27 +215,27 @@ export default function ConsultationForm() {
                 <div className="space-y-2">
                   <label
                     className="text-sm font-bold text-primary tracking-wide uppercase"
-                    htmlFor="full_name"
+                    htmlFor="name"
                   >
                     Full Name
                   </label>
                   <input
                     className={`w-full px-5 py-4 rounded-2xl bg-surface border-none ring-1 transition-all outline-none ${
-                      errors.full_name && touched.full_name
+                      errors.name && touched.name
                         ? "ring-red-500 focus:ring-red-500"
                         : "ring-gray-200 focus:ring-medical-blue"
                     }`}
-                    id="full_name"
-                    name="full_name"
-                    value={formData.full_name}
+                    id="name"
+                    name="name"
+                    value={formData.name}
                     onChange={handleInputChange}
                     onBlur={handleBlur}
                     placeholder="John Doe"
                     type="text"
                   />
-                  {errors.full_name && touched.full_name && (
+                  {errors.name && touched.name && (
                     <p className="text-xs text-red-500 font-medium flex items-center gap-1">
-                      <AlertCircle className="w-3 h-3" /> {errors.full_name}
+                      <AlertCircle className="w-3 h-3" /> {errors.name}
                     </p>
                   )}
                 </div>
