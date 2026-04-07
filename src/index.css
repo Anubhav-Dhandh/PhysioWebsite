@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-primary: #003f87;
+  --color-secondary: #006b5f;
+  --color-medical-blue: #0056b3;
+  --color-healing-mint: #98ffed;
+  
+  --color-surface: #f9f9ff;
+  --color-surface-container: #ededf6;
+  --color-surface-container-low: #f2f3fc;
+  --color-surface-container-lowest: #ffffff;
+}
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+  body {
+    @apply font-body bg-surface text-[#191c21];
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline;
+  }
+}
+
+.signature-gradient {
+  background: linear-gradient(135deg, #003f87 0%, #0056b3 100%);
+}
+
+.medical-gradient {
+  background: linear-gradient(135deg, #0056b3 0%, #003f87 100%);
+}
