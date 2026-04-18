@@ -36,14 +36,14 @@ export default function Hero() {
             Patna.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <motion.button
+            <motion.a
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              onClick={() => document.getElementById('consultation-form')?.scrollIntoView({ behavior: 'smooth' })}
-              className="signature-gradient text-white px-8 py-4 rounded-xl text-lg font-bold shadow-xl shadow-primary/20"
+              href="#consultation-form"
+              className="signature-gradient text-white px-8 py-4 rounded-xl text-lg font-bold shadow-xl shadow-primary/20 text-center flex items-center justify-center cursor-pointer"
             >
               Book Appointment
-            </motion.button>
+            </motion.a>
             <motion.a
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}

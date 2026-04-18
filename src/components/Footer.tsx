@@ -75,6 +75,14 @@ export default function Footer() {
             <li>
               <a
                 className="hover:text-healing-mint transition-colors"
+                href="#areas"
+              >
+                Service Areas
+              </a>
+            </li>
+            <li>
+              <a
+                className="hover:text-healing-mint transition-colors"
                 href="#consultation-form"
               >
                 Book Appointment

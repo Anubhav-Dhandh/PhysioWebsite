@@ -18,12 +18,62 @@
 @layer base {
   @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
+  html {
+    scroll-behavior: smooth;
+  }
+
+  section[id] {
+    scroll-margin-top: 80px;
+  }
+
   body {
     @apply font-body bg-surface text-[#191c21];
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-headline;
+  }
+}
+
+/* Custom CSS Media Queries for Enhanced Responsiveness */
+@layer base {
+  :root {
+    --section-spacing: 5rem;
+  }
+
+  /* Tablet Adjustments */
+  @media (min-width: 768px) {
+    :root {
+      --section-spacing: 6rem;
+    }
+  }
+
+  /* Desktop Adjustments */
+  @media (min-width: 1024px) {
+    :root {
+      --section-spacing: 8rem;
+    }
+  }
+
+  /* Fluid Typography - Scaling based on viewport */
+  h1 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+  }
+
+  h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  /* Custom Touch Targets for Mobile */
+  @media (max-width: 640px) {
+    button, a {
+      min-height: 48px;
+    }
+
+    .py-24 {
+      padding-top: var(--section-spacing);
+      padding-bottom: var(--section-spacing);
+    }
   }
 }
 
